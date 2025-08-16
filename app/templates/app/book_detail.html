@@ -1,0 +1,10 @@
+<h1>{{ kitob.name }}</h1>
+<p>Janr: {{ kitob.genre.title }}</p>
+<p>Muallif: <a href="{% url 'author_detail' kitob.author.id %}">{{ kitob.author.ism }}</a></p>
+<p>Sahifa: {{ kitob.saxifa }}</p>
+<p>Yili: {{ kitob.yili }}</p>
+<p>Narxi: {{ kitob.narxi }}</p>
+<p>Tavsif: {{ kitob.text }}</p>
+{% if kitob.rasm %}
+    <img src="{{ kitob.rasm.url }}" alt="{{ kitob.name }}">
+{% endif %}

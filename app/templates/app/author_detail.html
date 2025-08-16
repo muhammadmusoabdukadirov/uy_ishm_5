@@ -1,0 +1,12 @@
+<h1>{{ author.ism }}</h1>
+<p>{{ author.bio }}</p>
+{% if author.rasm %}
+    <img src="{{ author.rasm.url }}" alt="{{ author.ism }}">
+{% endif %}
+
+<h2>Uning kitoblari:</h2>
+<ul>
+{% for kitob in author.books.all %}
+    <li><a href="{% url 'book_detail' kitob.id %}">{{ kitob.name }}</a></li>
+{% endfor %}
+</ul>
